@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>MarketCompare</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <h1>MarketCompare</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#markets">Mercados</a>
+            <a href="#products">Produtos</a>
+            <a href="#compare">Comparar</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="markets">
+            <h2>Cadastro de Mercados</h2>
+            <input id="marketName" type="text" placeholder="Nome do mercado" />
+            <button onclick="addMarket()">Adicionar</button>
+            <ul id="marketList"></ul>
+        </section>
+
+        <section id="products">
+            <h2>Cadastro de Produtos</h2>
+            <input id="productName" type="text" placeholder="Nome do produto" />
+            <button onclick="addProduct()">Adicionar</button>
+            <ul id="productList"></ul>
+        </section>
+
+        <section id="compare">
+            <h2>Comparação de Preços</h2>
+            <input id="searchProd" type="text" placeholder="Digite o nome do produto" />
+            <button onclick="comparePrices()">Buscar</button>
+            <div id="compareResults"></div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
