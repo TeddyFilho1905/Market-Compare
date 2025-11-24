@@ -1,53 +1,47 @@
-/* ======= TIPOGRAFIA E BASE ======= */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', sans-serif;
-    background: #f4f6f8;
-    color: #1f2937;
-}
-
-/* ======= NAVBAR ======= */
-header {
-    background: #2563eb;
-    padding: 15px 20px;
+.market-grid {
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap; /* permite quebrar linha em telas menores */
     justify-content: space-between;
-    color: white;
-    font-weight: 600;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 20px; /* espaço entre cards */
+    margin-top: 25px;
 }
 
-header nav a {
-    margin-left: 20px;
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-header nav a:hover {
-    text-decoration: underline;
-}
-
-/* ======= CONTAINER PRINCIPAL ======= */
-.container {
-    width: 90%;
-    max-width: 1000px;
-    margin: 40px auto;
-}
-
-/* ======= CARDS ======= */
-.card {
+/* Cada mercado: card */
+.market-card {
+    flex: 1 1 calc(25% - 20px); 
     background: #ffffff;
     border: 1px solid #e5e7eb;
     border-radius: 12px;
-    padding: 25px;
-    margin-bottom: 25px;
+    padding: 20px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+    min-width: 220px; /* evita esmagamento */
 }
 
-.card h2 {
+.market-card h3 {
     margin-top: 0;
-    m
+}
+
+.market-card .price {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+.market-card button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.market-card button:hover {
+    background: #1d4ed8;
+}
