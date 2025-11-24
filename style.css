@@ -11,6 +11,7 @@
 
 /* Cada mercado: card */
 .market-card {
+    box-shadow: 5px 5px 10px 5px #000000;
     flex: 1 1 calc(25% - 20px); 
     background: #ffffff;
     border: 1px solid #e5e7eb;
