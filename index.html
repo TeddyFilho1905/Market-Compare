@@ -3,43 +3,70 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>MarketCompare</title>
+    <title>MarketCompare – Demonstração</title>
     <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    <header>
-        <h1>MarketCompare</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="#markets">Mercados</a>
-            <a href="#products">Produtos</a>
-            <a href="#compare">Comparar</a>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">MarketCompare</div>
+
+        <nav class="nav">
+            <a href="#sobre">Sobre</a>
+            <a href="#mercados">Mercados</a>
+            <a href="#contato">Contato</a>
         </nav>
     </header>
 
-    <main>
-        <section id="markets">
-            <h2>Cadastro de Mercados</h2>
-            <input id="marketName" type="text" placeholder="Nome do mercado" />
-            <button onclick="addMarket()">Adicionar</button>
-            <ul id="marketList"></ul>
-        </section>
+    <!-- HERO / BUSCA -->
+    <section class="hero">
+        <h1>Compare preços entre mercados da sua cidade</h1>
+        <p>Pesquise um produto e veja onde ele está mais barato.</p>
 
-        <section id="products">
-            <h2>Cadastro de Produtos</h2>
-            <input id="productName" type="text" placeholder="Nome do produto" />
-            <button onclick="addProduct()">Adicionar</button>
-            <ul id="productList"></ul>
-        </section>
+        <div class="search-box">
+            <input type="text" id="heroSearch" placeholder="Ex.: Arroz, Leite, Feijão...">
+            <button>Buscar</button>
+        </div>
+    </section>
 
-        <section id="compare">
-            <h2>Comparação de Preços</h2>
-            <input id="searchProd" type="text" placeholder="Digite o nome do produto" />
-            <button onclick="comparePrices()">Buscar</button>
-            <div id="compareResults"></div>
-        </section>
-    </main>
+    <!-- LISTA DE MERCADOS (DEMONSTRAÇÃO) -->
+    <section id="mercados" class="markets-section">
+        <h2>Mercados Próximos</h2>
 
-    <script src="app.js"></script>
+        <div class="market-grid">
+
+            <div class="market-card">
+                <h3>Supermercado Central</h3>
+                <p>Preço do produto pesquisado:</p>
+                <span class="price">R$ 12,99</span>
+                <button>Ver detalhes</button>
+            </div>
+
+            <div class="market-card">
+                <h3>Bom Preço</h3>
+                <p>Preço do produto pesquisado:</p>
+                <span class="price">R$ 11,79</span>
+                <button>Ver detalhes</button>
+            </div>
+
+            <div class="market-card">
+                <h3>Mercadão Popular</h3>
+                <p>Preço do produto pesquisado:</p>
+                <span class="price">R$ 13,40</span>
+                <button>Ver detalhes</button>
+            </div>
+
+            <div class="market-card">
+                <h3>CompreFácil</h3>
+                <p>Preço do produto pesquisado:</p>
+                <span class="price">R$ 10,99</span>
+                <button>Ver detalhes</button>
+            </div>
+
+        </div>
+    </section>
+
 </body>
 </html>
