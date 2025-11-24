@@ -64,3 +64,105 @@ function escapeHtml(text) {
     const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
     return text.replace(/[&<>"']/g, function(m) { return map[m]; });
 }
+
+function handleSearchKey(event) {
+    if (event.key === "Enter") {
+        alert("Buscando por: " + document.getElementById("heroSearch").value);
+    }
+}
+
+function findProduct(input) {
+    // mais tarde podemos implementar autocomplete real
+    console.log("Digitando: " + input.value);
+}
+
+// auto complete
+// Lista real de produtos (podemos expandir depois)
+const productList = [
+    "Arroz",
+    "Feijão",
+    "Leite",
+    "Açúcar",
+    "Café",
+    "Macarrão",
+    "Óleo de Soja",
+    "Farinha",
+    "Detergente",
+    "Sabonete",
+    "Biscoito",
+    "Carnes",
+    "Ovos",
+    "Queijo",
+    "Manteiga"
+];
+
+let currentSuggestionIndex = -1;
+
+function showSuggestions(text) {
+    const box = document.getElementById("autocomplete-list");
+    box.innerHTML = "";
+    box.style.display = "none";
+    currentSuggestionIndex = -1;
+
+    const inputValue = text.toLowerCase().trim();
+    if (inputValue.length === 0) return;
+
+    const suggestions = productList.filter(item =>
+        item.toLowerCase().startsWith(inputValue)
+    );
+
+    if (suggestions.length === 0) return;
+
+    box.style.display = "block";
+
+    suggestions.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = item;
+
+        li.onclick = () => {
+            document.getElementById("heroSearch").value = item;
+            box.style.display = "none";
+        };
+
+        box.appendChild(li);
+    });
+}
+
+
+function navigateSuggestions(event) {
+    const box = document.getElementById("autocomplete-list");
+    const items = box.getElementsByTagName("li");
+
+    if (items.length === 0) return;
+
+    if (event.key === "ArrowDown") {
+        currentSuggestionIndex = (currentSuggestionIndex + 1) % items.length;
+    } 
+    else if (event.key === "ArrowUp") {
+        currentSuggestionIndex = (currentSuggestionIndex - 1 + items.length) % items.length;
+    }
+    else if (event.key === "Enter") {
+        event.preventDefault();
+        if (currentSuggestionIndex >= 0) {
+            items[currentSuggestionIndex].click();
+        }
+        return;
+    } else {
+        return;
+    }
+
+    for (let i = 0; i < items.length; i++) {
+        items[i].classList.remove("active");
+    }
+
+    items[currentSuggestionIndex].classList.add("active");
+}
+
+function selectCurrentSuggestion() {
+    const box = document.getElementById("autocomplete-list");
+    const items = box.getElementsByTagName("li");
+
+    if (currentSuggestionIndex >= 0) {
+        items[currentSuggestionIndex].click();
+    }
+}

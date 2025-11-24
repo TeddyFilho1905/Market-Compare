@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>MarketCompare – Demonstração</title>
     <link rel="stylesheet" href="style.css" />
+    
+
 </head>
+
 
 <body>
 
@@ -13,22 +16,39 @@
     <header class="header">
         <div class="logo">MarketCompare</div>
 
-        <nav class="nav">
+        <nav class="nav-menu">
             <a href="#sobre">Sobre</a>
             <a href="#mercados">Mercados</a>
             <a href="#contato">Contato</a>
         </nav>
     </header>
 
+
     <!-- HERO (Chamada Principal) -->
     <section class="hero">
         <h1>Compare preços entre mercados da sua cidade</h1>
         <p>Pesquise um produto e veja onde ele está mais barato.</p>
 
-        <div class="search-box">
-            <input type="text" id="heroSearch" placeholder="Ex.: Arroz, Leite, Feijão...">
-            <button>Buscar</button>
-        </div>
+    <div class="search-box-hero">
+
+        <input 
+            type="text"
+            id="heroSearch"
+            placeholder="Pesquisar produto..."
+            autocomplete="off"
+            class="search-input"
+            oninput="showSuggestions(this.value)"
+            onkeydown="navigateSuggestions(event)"
+        >
+
+        <button class="search-btn" onclick="selectCurrentSuggestion()">Buscar</button>
+
+        <ul id="autocomplete-list" class="autocomplete-box"></ul>
+
+    </div>
+
+
+
     </section>
 
     <!-- LISTA DE MERCADOS (Demonstração) -->
@@ -39,6 +59,13 @@
 
             <div class="market-card">
                 <h3>Supermercado Central</h3>
+                <p>Preço do produto pesquisado:</p>
+                <span class="price">R$ 12,99</span>
+                <button>Ver detalhes</button>
+            </div>
+
+            <div class="market-card">
+                <h3>Economia Las vegas</h3>
                 <p>Preço do produto pesquisado:</p>
                 <span class="price">R$ 12,99</span>
                 <button>Ver detalhes</button>
@@ -67,6 +94,6 @@
 
         </div>
     </section>
-
+    <script src="app.js"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@
 
 /* Cada mercado: card */
 .market-card {
-    box-shadow: 5px 5px 19px 8px #000000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     flex: 1 1 calc(25% - 20px); 
     background: #ffffff;
     border: 1px solid #e5e7eb;
@@ -44,4 +44,141 @@
 
 .market-card button:hover {
     background: #1d4ed8;
+}
+/*---------------------------------------------------------------------------------------------------*/
+
+.search-box-hero {
+    position: relative;
+    width: 60%;
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+}
+
+
+.search-input {
+    padding: 15px 20px;
+    width: 100%;
+    max-width: 500px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+
+
+.search-input:focus {
+    outline: none;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+.search-btn {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 25px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.10);
+    transition: 0.3s;
+}
+
+.search-btn:hover {
+    background: #1d4ed8;
+}
+
+/* auto complete */
+/*---------------------------------------------------------------------------------------------------*/
+
+
+.autocomplete-box {
+    position: absolute;
+    top: 48px; /* distância exata abaixo do input */
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    overflow-y: auto;
+    max-height: 200px;
+    display: none;
+    z-index: 999;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.autocomplete-box li {
+    padding: 12px 18px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 16px;
+}
+
+.autocomplete-box li:last-child {
+    border-bottom: none;
+}
+
+.autocomplete-box li:hover,
+.autocomplete-box li.active {
+    background: #2563eb;
+    color: white;
+}
+
+/*---------------------------------------------------------------------------------------------------*/
+/* ===== NAV FIXO E SIMPLES ===== */
+/* ===== NAV FIXO E SIMPLES (CORRIGIDO E COMENTADO) ===== */
+.header {
+    position: fixed; /* fixa o header no topo */
+    top: 0;          /* encosta no topo da janela */
+    left: 0;         /* alinha à esquerda */
+    width: 100%;     /* ocupa toda a largura */
+    height: 65px;    /* altura do nav */
+    background: #ffffff; /* fundo branco */
+    display: flex;        /* ativa layout flexível */
+    flex-direction: row;
+    align-items: center;  /* centraliza itens verticalmente */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* sombra leve */
+    z-index: 1000;        /* garante que fique sobre outros elementos */
+    justify-content: space-between;
+}
+
+/* evita que o conteúdo fique escondido atrás do header fixo */
+body {
+    padding-top: 65px; /* empurra tudo para baixo */
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2563eb;
+    white-space: nowrap;
+    margin-right: 0px; /* um espaçamento fixo menor é suficiente */
+}
+
+.nav-menu {
+    display: flex;
+    gap: 10px;
+    white-space: nowrap;
+    padding-right: 20px; /* alinhamento correto */
+}
+
+.nav-menu a {
+    text-decoration: none; /* remove sublinhado */
+    font-size: 16px;        /* tamanho do texto */
+    font-weight: 500;       /* peso médio */
+    color: #1f2937;         /* cinza escuro */
+    transition: 0.2s;       /* efeito suave no hover */
+}
+
+.nav-menu a:hover {
+    color: #2563eb; /* muda para azul no hover */
 }
