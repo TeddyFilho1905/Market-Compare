@@ -1,7 +1,7 @@
 # **MarketCompare – Price Comparison Web App**
 
 MarketCompare is a demonstration web application created to compare product prices across local markets. 
-It features a clean interface, real-time autocomplete suggestions, and mock price comparison for demonstration purposes.
+It features a clean interface, real-time autocomplete suggestions, and   price comparison for demonstration purposes.
 
 ---
 
@@ -9,7 +9,7 @@ It features a clean interface, real-time autocomplete suggestions, and mock pric
 
 * Product search with autocomplete
 * Card-based display for products and markets
-* Mock price comparison with sorted results
+* Price comparison with sorted results
 * Responsive layout
 * Modular and easily extensible structure
 
@@ -23,7 +23,7 @@ It features a clean interface, real-time autocomplete suggestions, and mock pric
 * Highlights items with arrow keys.
 * Enter selects the active suggestion.
 
-### **Mock Price Comparison**
+### **  Price Comparison**
 
 * Generates random prices for demonstration.
 * Displays results ordered from cheapest to most expensive.
