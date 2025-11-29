@@ -1,7 +1,3 @@
-Here is the **clean, formal, and ready-to-paste README.md**:
-
----
-
 # **MarketCompare – Price Comparison Web App**
 
 MarketCompare is a demonstration web application created to compare product prices across local markets. 
