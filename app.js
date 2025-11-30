@@ -1,5 +1,5 @@
 let markets = [];
-let products = [];
+
 
 function addMarket() {
     const input = document.getElementById("marketName");
@@ -166,3 +166,52 @@ function selectCurrentSuggestion() {
         items[currentSuggestionIndex].click();
     }
 }
+
+// Caminho local do arquivo JSON
+const PRODUCTS_URL = "./products.json";
+
+// Lista principal carregada do JSON
+let products = [];
+
+// Carrega os dados ao iniciar o app
+fetch(PRODUCTS_URL)
+  .then(response => response.json())
+  .then(data => {
+    products = data;          // salva os produtos na memória
+    renderProducts(products); // exibe todos assim que carregar
+  })
+  .catch(error => console.error("Erro ao carregar products.json:", error));
+
+
+// Renderiza lista completa ou filtrada
+function renderProducts(list) {
+  const container = document.getElementById("products");
+  container.innerHTML = "";
+
+  list.forEach(product => {
+    const card = document.createElement("div");
+    card.classList.add("product-card");
+
+    card.innerHTML = `
+      <h3>${product.name}</h3>
+      <p>Preço: R$ ${product.price}</p>
+      <p>Categoria: ${product.category}</p>
+      <p>Mercado: ${product.market}</p>
+    `;
+
+    container.appendChild(card);
+  });
+}
+
+
+// Filtro por categoria
+document.getElementById("filter-category").addEventListener("change", function () {
+  const selected = this.value;
+
+  if (selected === "") {
+    renderProducts(products); // sem filtro
+  } else {
+    const filtered = products.filter(p => p.category === selected);
+    renderProducts(filtered);
+  }
+});
