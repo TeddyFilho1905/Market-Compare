@@ -1,7 +1,6 @@
 # **MarketCompare – Price Comparison Web App**
 
-MarketCompare is a demonstration web application created to compare product prices across local markets. 
-It features a clean interface, real-time autocomplete suggestions, and   price comparison for demonstration purposes.
+A web app that compares product prices across local markets to help people save.
 
 ---
 
