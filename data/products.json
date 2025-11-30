@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "Arroz Branco 5kg",
+        "price": 21.90,
+        "category": "alimentos",
+        "market": "Mercado do Divino"
+    },
+    {
+        "id": 2,
+        "name": "Detergente Neutro 500ml",
+        "price": 2.99,
+        "category": "limpeza",
+        "market": "Supermercado Bom Preço"
+    },
+    {
+        "id": 3,
+        "name": "Sabonete Dove 90g",
+        "price": 4.50,
+        "category": "higiene",
+        "market": "Atacadão Central"
+    },
+    {
+        "id": 4,
+        "name": "Refrigerante Cola 2L",
+        "price": 7.89,
+        "category": "bebidas",
+        "market": "Mercado do Divino"
+    }
+]
