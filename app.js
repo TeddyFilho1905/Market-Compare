@@ -168,7 +168,7 @@ function selectCurrentSuggestion() {
 }
 
 // Caminho local do arquivo JSON
-const PRODUCTS_URL = "./products.json";
+const PRODUCTS_URL = "data/products.json";
 
 // Lista principal carregada do JSON
 let products = [];
@@ -215,3 +215,31 @@ document.getElementById("filter-category").addEventListener("change", function (
     renderProducts(filtered);
   }
 });
+
+//const PRODUCTS_URL = "data/products.json";
+
+fetch(PRODUCTS_URL)
+  .then(res => res.json())
+  .then(products => {
+    const destaques = products.slice(0, 5);
+    renderCarousel(destaques);
+  })
+  .catch(err => console.error("Erro ao carregar JSON:", err));
+
+function renderCarousel(list) {
+  const track = document.getElementById("carousel");
+
+  list.forEach(p => {
+    const card = document.createElement("div");
+    card.classList.add("product-card");
+
+    card.innerHTML = `
+      <h3>${p.name}</h3>
+      <p><strong>Mercado:</strong> ${p.market}</p>
+      <p><strong>Preço:</strong> R$ ${p.price}</p>
+      <button>Ver detalhes</button>
+    `;
+
+    track.appendChild(card); // <-- AQUI ele entra no HTML
+  });
+}

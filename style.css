@@ -1,23 +1,26 @@
 .market-grid {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap; /* permite quebrar linha em telas menores */
+    flex-wrap: wrap;
+    /* permite quebrar linha em telas menores */
     justify-content: space-between;
     align-items: flex-start;
     align-content: flex-start;
-    gap: 20px; /* espaço entre cards */
+    gap: 20px;
+    /* espaço entre cards */
     margin-top: 25px;
 }
 
 /* Cada mercado: card */
 .market-card {
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    flex: 1 1 calc(25% - 20px); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    flex: 1 1 calc(25% - 20px);
     background: #ffffff;
     border: 1px solid #e5e7eb;
     border-radius: 12px;
     padding: 20px;
-    min-width: 220px; /* evita esmagamento */
+    min-width: 220px;
+    /* evita esmagamento */
 }
 
 .market-card h3 {
@@ -45,7 +48,11 @@
 .market-card button:hover {
     background: #1d4ed8;
 }
+
 /*---------------------------------------------------------------------------------------------------*/
+.hero {
+    margin-bottom: 20px;
+}
 
 .search-box-hero {
     position: relative;
@@ -65,7 +72,7 @@
     border-radius: 25px;
     font-size: 16px;
     background: #ffffff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     transition: 0.3s;
 }
 
@@ -73,7 +80,7 @@
 
 .search-input:focus {
     outline: none;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
 }
 
 .search-btn {
@@ -85,7 +92,7 @@
     cursor: pointer;
     font-size: 16px;
     font-weight: 600;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.10);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.10);
     transition: 0.3s;
 }
 
@@ -99,12 +106,13 @@
 
 .autocomplete-box {
     position: absolute;
-    top: 48px; /* distância exata abaixo do input */
+    top: 48px;
+    /* distância exata abaixo do input */
     left: 0;
     width: 100%;
     background: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
     overflow-y: auto;
     max-height: 200px;
     display: none;
@@ -137,48 +145,129 @@
 /* ===== NAV FIXO E SIMPLES ===== */
 /* ===== NAV FIXO E SIMPLES (CORRIGIDO E COMENTADO) ===== */
 .header {
-    position: fixed; /* fixa o header no topo */
-    top: 0;          /* encosta no topo da janela */
-    left: 0;         /* alinha à esquerda */
-    width: 100%;     /* ocupa toda a largura */
-    height: 65px;    /* altura do nav */
-    background: #ffffff; /* fundo branco */
-    display: flex;        /* ativa layout flexível */
+    position: fixed;
+    /* fixa o header no topo */
+    top: 0;
+    /* encosta no topo da janela */
+    left: 0;
+    /* alinha à esquerda */
+    width: 100%;
+    /* ocupa toda a largura */
+    height: 65px;
+    /* altura do nav */
+    background: #ffffff;
+    /* fundo branco */
+    display: flex;
+    /* ativa layout flexível */
     flex-direction: row;
-    align-items: center;  /* centraliza itens verticalmente */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* sombra leve */
-    z-index: 1000;        /* garante que fique sobre outros elementos */
+    align-items: center;
+    /* centraliza itens verticalmente */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    /* sombra leve */
+    z-index: 1000;
+    /* garante que fique sobre outros elementos */
     justify-content: space-between;
+    margin-bottom: 20px;
+    /* espaço abaixo do header */
 }
 
 /* evita que o conteúdo fique escondido atrás do header fixo */
-body {
-    padding-top: 65px; /* empurra tudo para baixo */
-}
+
 
 .logo {
     font-size: 22px;
     font-weight: 700;
     color: #2563eb;
     white-space: nowrap;
-    margin-right: 0px; /* um espaçamento fixo menor é suficiente */
+    /* margin-right: 0px; um espaçamento fixo menor é suficiente */
+    padding: 0 20px 20px 0;
+    /* espaço à esquerda */
 }
 
 .nav-menu {
     display: flex;
     gap: 10px;
     white-space: nowrap;
-    padding-right: 20px; /* alinhamento correto */
+    padding-right: 20px;
+    /* alinhamento correto */
 }
 
 .nav-menu a {
-    text-decoration: none; /* remove sublinhado */
-    font-size: 16px;        /* tamanho do texto */
-    font-weight: 500;       /* peso médio */
-    color: #1f2937;         /* cinza escuro */
-    transition: 0.2s;       /* efeito suave no hover */
+    text-decoration: none;
+    /* remove sublinhado */
+    font-size: 16px;
+    /* tamanho do texto */
+    font-weight: 500;
+    /* peso médio */
+    color: #1f2937;
+    /* cinza escuro */
+    transition: 0.2s;
+    /* efeito suave no hover */
 }
 
 .nav-menu a:hover {
-    color: #2563eb; /* muda para azul no hover */
+    color: #2563eb;
+    /* muda para azul no hover */
+}
+
+/*---------------------------------------------------------------------------------------------------*/
+/* ===== CARROSSEL HORIZONTAL SIMPLES ===== */
+.products-section {
+    align-self: center;
+    width: 90%;
+    padding: 40px 20px;
+    background: #0556a8;
+    /* border-radius: 3%; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.carousel-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px 0;
+    scroll-snap-type: x mandatory;
+}
+
+.carousel-track {
+    display: inline-flex;
+    gap: 15px;
+}
+
+.product-card {
+    min-width: 200px;
+    max-width: 220px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px;
+    border: 1px solid #e5e7eb;
+    scroll-snap-align: start;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+
+.main-call {
+    text-align: start;
+    /* margin-top: 100px; */
+    /* ajuste conforme necessário */
+    margin-bottom: 50px;
+    margin-left: 20px;
+    padding: 50px 20px;
+    /* background: #ffffff;
+    background: linear-gradient(90deg, rgba(0, 105, 153, .5) 30%, rgba(0, 105, 153, 1) 80%); */
+
+    
+}
+
+.main-call h1 {
+    font-size: 2.5rem;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+body   {
+    margin: 0;
+    background: linear-gradient(90deg, rgba(0, 105, 153, .5) 30%, rgba(0, 105, 153, 1) 80%);
+    
 }
